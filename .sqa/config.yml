@@ -1,0 +1,58 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.7.11
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/norwegian-geotechnical-institute/BingCLAW_5.6.1:
+      branch: main
+      repo: https://github.com/norwegian-geotechnical-institute/BingCLAW_5.6.1
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/norwegian-geotechnical-institute/BingCLAW_5.6.1 git:
+        commands:
+        - /usr/bin/env sh .sqa/script.cheeky-grey-oyster.sh
+        container: qc.acc_skimpy-indigo-eleuth
+  QC.Doc:
+    repos:
+      github.com/norwegian-geotechnical-institute/BingCLAW_5.6.1 find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.lovely-champagne-panda.sh
+        container: qc.doc_snippy-beige-spaniel
+      github.com/norwegian-geotechnical-institute/BingCLAW_5.6.1 git:
+        commands:
+        - /usr/bin/env sh .sqa/script.surly-cardinal-orangutan.sh
+        container: qc.doc_shaggy-white-blue
+      github.com/norwegian-geotechnical-institute/BingCLAW_5.6.1 markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.droopy-taupe-chameleon.sh
+        container: qc.doc_squirrely-emerald-frise
+  QC.Lic:
+    repos:
+      github.com/norwegian-geotechnical-institute/BingCLAW_5.6.1 licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.snoopy-carmine-grasshopper.sh
+        container: qc.lic_foggy-amaranth-anteater
+  QC.Sec:
+    repos:
+      github.com/norwegian-geotechnical-institute/BingCLAW_5.6.1 bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.shaky-jade-capuchin.sh
+        container: qc.sec_beady-olivine-eagle
+  QC.Sty:
+    repos:
+      github.com/norwegian-geotechnical-institute/BingCLAW_5.6.1 flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.scummy-bistre-guppy.sh
+        container: qc.sty_hasty-gold-mule
+  QC.Ver:
+    repos:
+      github.com/norwegian-geotechnical-institute/BingCLAW_5.6.1 get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.cloudy-taupe-cuttlefish.sh
+        container: qc.ver_crabby-wheat-zorse
+timeout: 5400
