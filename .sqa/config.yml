@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/2.0.1
+      branch: main
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/norwegian-geotechnical-institute/BingCLAW_5.6.1:
       branch: main
@@ -15,50 +15,50 @@ sqa_criteria:
     repos:
       github.com/norwegian-geotechnical-institute/BingCLAW_5.6.1 git:
         commands:
-        - /usr/bin/env sh .sqa/script.smelly-silver-badger.sh
-        container: qc.acc_scanty-bistre-millipede
+        - /usr/bin/env sh .sqa/script.geeky-chartreuse-turkey.sh
+        container: qc.acc_nerdy-seashell-urchin
   QC.Doc:
     repos:
       github.com/norwegian-geotechnical-institute/BingCLAW_5.6.1 find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.foggy-flax-liger.sh
-        container: qc.doc_messy-teal-terrier
+        - /usr/bin/env sh .sqa/script.crappy-emerald-oriole.sh
+        container: qc.doc_cloudy-ochre-impala
       github.com/norwegian-geotechnical-institute/BingCLAW_5.6.1 git:
         commands:
-        - /usr/bin/env sh .sqa/script.messy-blue-meerkat.sh
-        container: qc.doc_flabby-lime-dachsbracke
+        - /usr/bin/env sh .sqa/script.whiny-cobalt-chin.sh
+        container: qc.doc_ready-lavender-angora
       github.com/norwegian-geotechnical-institute/BingCLAW_5.6.1 markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.cranky-alizarin-wolverine.sh
-        container: qc.doc_freaky-mustard-capybara
+        - /usr/bin/env sh .sqa/script.surly-mustard-cat.sh
+        container: qc.doc_flabby-vermilion-drever
   QC.Lic:
     repos:
       github.com/norwegian-geotechnical-institute/BingCLAW_5.6.1 licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.lousy-crimson-schnauzer.sh
-        container: qc.lic_lousy-taupe-heron
+        - /usr/bin/env sh .sqa/script.beady-tangerine-magpie.sh
+        container: qc.lic_wimpy-plum-jackal
   QC.Sec:
     repos:
       github.com/norwegian-geotechnical-institute/BingCLAW_5.6.1 bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.smelly-black-greyhound.sh
-        container: qc.sec_snazzy-thistle-bullfrog
+        - /usr/bin/env sh .sqa/script.beady-lilac-greyhound.sh
+        container: qc.sec_hasty-cobalt-zonkey
   QC.Sty:
     repos:
       github.com/norwegian-geotechnical-institute/BingCLAW_5.6.1 flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.goopy-copper-alligator.sh
-        container: qc.sty_beady-xanthic-akbash
+        - /usr/bin/env sh .sqa/script.homey-buff-devil.sh
+        container: qc.sty_muggy-orchid-gecko
   QC.Uni:
     repos:
       github.com/norwegian-geotechnical-institute/BingCLAW_5.6.1 pytest:
         commands:
-        - /usr/bin/env sh .sqa/script.gamy-scarlet-horse.sh
-        container: qc.uni_craggy-rust-cuscus
+        - /usr/bin/env sh .sqa/script.crabby-aquamarine-donkey.sh
+        container: qc.uni_lumpy-russet-foxhound
   QC.Ver:
     repos:
       github.com/norwegian-geotechnical-institute/BingCLAW_5.6.1 get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.cozy-cobalt-seal.sh
-        container: qc.ver_lousy-aqua-gorilla
+        - /usr/bin/env sh .sqa/script.snazzy-purple-cattle.sh
+        container: qc.ver_sleazy-cardinal-quail
 timeout: 5400
